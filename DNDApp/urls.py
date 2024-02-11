@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Monsters/', include('Monsters.urls')),
+    path('character/', include('character.urls')),
+    path('items/', include('items.urls'))
 ]
 
 # Use static() to add URL mapping to serve static files during development (only)

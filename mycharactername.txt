@@ -1,0 +1,22 @@
+Name: None
+Background:
+None
+
+Age: None
+Gender: None
+Description: None
+Class: Druid
+Level: 1
+Current Experience: 0
+EXP to next Level: 300
+
+Proficiencies:
+Light Armor, Medium Armor, Shields, Clubs, Daggers, Javelins, Maces, Quarterstaffs, Sickles, Spears, Darts, Slings, Scimitars, Herbalism Kit, Saving Throw: INT, Saving Throw: WIS
+
+Inventory:
+Leather Armor, Explorer's Pack
+
+Class Features:
+Spellcasting: Druid, Druidic
+
+
