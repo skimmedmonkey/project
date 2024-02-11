@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Monsters.apps.MonstersConfig' #add MonstersConfig created in Monsters/apps.py
+    'Monsters'
 ]
 
 MIDDLEWARE = [
