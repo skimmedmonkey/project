@@ -1,6 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Search</title>
+    <link rel="stylesheet" href="{% static 'character/css/app.css' %}">
+    
+</head>
+<nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
+<body>
 <h2>Create a D&D Character</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save Character</button>
 </form>
+</body>
+</html>

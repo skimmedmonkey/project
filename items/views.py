@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from.utils import fetch_item_info
+from .utils import fetch_item_info
 
 # Create your views here.
 def item_search(request):

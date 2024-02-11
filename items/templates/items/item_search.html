@@ -1,55 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Item Search</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+    <link rel="stylesheet" href="{% static 'items/css/app.css' %}">
 
-        h2 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .section {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .table th, .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        .table th {
-            background-color: #f2f2f2;
-        }
-
-        .property {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .value {
-            margin-bottom: 15px;
-        }
-
-        .image {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
+<nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
 <body>
     <h1>Item Search</h1>
     <p>Enter an item's name into this simple form to get all of the information about that particular item.</p>

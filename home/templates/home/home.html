@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Search</title>
+    <link rel="stylesheet" href="{% static 'home/css/app.css' %}">
+</head>
+<nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
+<body>
+    <h1>Dungeons and Dragons DM Tool</h1>
+    <p>This web app can help you with your dungeon master needs! Pick one of the three options below for Monsters, Items, and NPCs(non-player character). The monster tool will help you look up Dungeons and Dragons monsters by name from the monster manual. The items tool lets you look up items by name for quick descriptions. The NPC button takes you to a tool that will automatically generate a non player character for your players to interact with.</p>
+    <p><a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></p>
+
+
+    
+</body>
+</html>
