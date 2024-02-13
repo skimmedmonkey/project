@@ -6,7 +6,7 @@
 :root {
     --sk-orange: #f2b705cb; 
     --sk-beige: #FCEBCD;
-    --sk-black-op: #141414c7;
+    --sk-black-op: #141414;
     --sk-shadow-gray: #3a372f;
     --sk-yellow: #ebd573; 
   }
@@ -18,8 +18,7 @@ but not for an assignment.
 
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
   body {       /* Can alternatively define in html {}. */
-    background-color:var(--beaver-orange);
-    background-image:url(images/background-art-installation.jpg);
+    background-color:var(--sk-black-op);
     background-size: cover;
     background-attachment: fixed;
     background-position: top left;

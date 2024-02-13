@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="{% static 'character/css/app.css' %}">
     
 </head>
+<h1>Dungeons and Dragon DM Tool</h1>
 <nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
 <body>
 <h2>Create a D&D Character</h2>
+<p>Use the below form to create a character for Dungeons and Dragons. When setting your stats such as strength or dexterity, remember to keep the stat at or below 20. Type in the equipment you want the character to start with, you can be creative since you are the Dungeon Master. List out the attacks your character has, like shortsword 1d6+2 so it's easy to know how many dice you need to roll, as well as their modifier. The spells are optional, but if you'd like, you can include any number of spells like Magelight or Acid Rain, as a couple examples. When you're finished, click Generate Character and see it displayed in the web app for easy use.</p>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save Character</button>
+    <button type="submit">Generate Character</button>
 </form>
 </body>
 </html>

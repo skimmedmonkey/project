@@ -6,9 +6,10 @@
     <title>Monster Search</title>
     <link rel="stylesheet" href="{% static 'Monsters/css/app.css' %}">
 </head>
+<h1>Dungeons and Dragon DM Tool</h1>
 <nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
 <body>
-    <h1>Monster Search</h1>
+    <h2>Monster Search</h2>
     <p>Enter a monster's name into this simple form to get all of the information about that particular monster.</p>
     <form action="{% url 'monster_search' %}" method="get">
         <label for="search_term">Search for a monster:</label>
@@ -17,16 +18,12 @@
     </form>
 
     {% if monster_data %}
-        <h2>{{ monster_data.name }}</h2>
+        <h3>{{ monster_data.name }}</h3>
         <div class="section">
             <h2>Basic Information</h2>
-            <div class="property">Size:</div>
-            <div class="value">{{ monster_data.size }}</div>
+            <div class="property"><strong>Size:</strong> {{ monster_data.size }}</div>
     
-            <div class="property">Type:</div>
-            <div class="value">{{ monster_data.type }}</div>
-    
-            <!-- Add more basic information properties as needed -->
+            <div class="property"><strong>Type:</strong> {{ monster_data.type }}</div>
         </div>
     
         <div class="section">
@@ -35,30 +32,21 @@
                 <tr>
                     <th>Strength</th>
                     <td>{{ monster_data.strength }}</td>
-                </tr>
-                <tr>
                     <th>Dexterity</th>
                     <td>{{ monster_data.dexterity }}</td>
-                </tr>
-                <tr>
                     <th>Constitution</th>
                     <td>{{ monster_data.constitution }}</td>
                 </tr>
                 <tr>
                     <th>Intelligence</th>
                     <td>{{ monster_data.intelligence }}</td>
-                </tr>
-                <tr>
                     <th>Wisdom</th>
                     <td>{{ monster_data.wisdom }}</td>
-                </tr>
-                <tr>
                     <th>Charisma</th>
                     <td>{{ monster_data.charisma }}</td>
                 </tr>
             </table>
         </div>
-    
         <div class="section">
             <h2>Speed</h2>
             <table class="table">

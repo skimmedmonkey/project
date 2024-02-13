@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="{% static 'items/css/app.css' %}">
 
 </head>
+<h1>Dungeons and Dragon DM Tool</h1>
 <nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
 <body>
-    <h1>Item Search</h1>
-    <p>Enter an item's name into this simple form to get all of the information about that particular item.</p>
+    <h2>Item Search</h2>
+    <p>Enter an item's name into this simple form to get all of the information about that particular item. Remember to type in the right item name, or else it may not be able to retrieve the information! You can give it a try using some simple equipment like shortsword, longbow or mace to test it out!</p>
     <form action="{% url 'item_search' %}" method="get">
         <label for="search_term">Search for an item:</label>
         <input type="text" id="search_term" name="search_term">
@@ -18,20 +19,17 @@
     </form>
 
     {% if item_data %}
-        <h2>{{ item_data.name }}</h2>
+        <h3>{{ item_data.name }}</h3>
         <div class="section">
-            <h2>Basic Information</h2>
-            <div class="property">Damage:</div>
-            <div class="value">{{ item_data.damage.damage_dice }}</div>
+            <h4>Basic Information</h4>
+            <div class="property">Damage: {{ item_data.damage.damage_dice }}</div>
     
-            <div class="property">Damage Type:</div>
-            <div class="value">{{ item_data.damage.damage_type.name }}</div>
+            <div class="property">Damage Type: {{ item_data.damage.damage_type.name }}</div>
 
-            <div class="property">Range:</div>
-            <div class="value">{{ item_data.range.normal }}</div>
+            <div class="property">Range: {{ item_data.range.normal }}</div>
 
-            <div class="property">Weapon Category:</div>
-            <div class="value">{{ item_data.weapon_category }}</div>
+            <div class="property">Weapon Category: {{ item_data.weapon_category }}</div>
+
     
             <!-- Add more basic information properties as needed -->
         </div>

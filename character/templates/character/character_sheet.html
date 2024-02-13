@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Sheet Details</title>
+    <link rel="stylesheet" href="{% static 'character/css/app.css' %}">
+    
+</head>
+<h1>Dungeons and Dragon DM Tool</h1>
+<nav><a href="{% url 'home'%}">Home</a> <a href="{% url 'monster_search'%}">Monsters</a> <a href="{% url 'item_search'%}">Items</a> <a href="{% url 'create_character'%}">NPC</a></nav>
+<body>
+<h2>Name: {{ character_sheet.name}}</h2>
+<p>Race: {{ character_sheet.race}} Class: {{character_sheet.class_name}} Alignment: {{character_sheet.alignment}}</p>
+<p>Armor: {{character_sheet.armor}} Speed: {{character_sheet.speed}}</p>
+<p>Strength: {{character_sheet.strength}} Dexterity: {{character_sheet.dexterity}} Constitution: {{character_sheet.constitution}}</p>
+<p>Intelligence: {{character_sheet.intelligence}} Wisdom: {{character_sheet.wisdom}} Charisma: {{character_sheet.charisma}}</p>
+<p>Equipment: {{character_sheet.equipment}}</p>
+<p>Attacks: {{character_sheet.attacks}}</p>
+<p>Spells: {{character_sheet.spells}}</p>
+<a href="{% url 'create_character' %}">Go back to the Character Builder Form</a>
+</body>
+</html>
