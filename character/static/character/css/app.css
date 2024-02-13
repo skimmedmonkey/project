@@ -179,20 +179,24 @@ but not for an assignment.
     background-color: var(--sk-orange)
   }
   input, textarea, select {
-    font-size: 110%;
+    font-size: 100%;
     padding: 1%;
-    margin: 2%;
+    margin: 1%;
     font-family:inherit;;
     color: var(--sk-black-op);
     background-color: var(--sk-beige);
-
+  }
+  input {
+    width: 90%;
+    height: 40px
   }
   textarea {
-    width: 60%;
+    width: 100%;
     height: 20%;
+
   }
   select, option {
-    font-size: 120%;
+    font-size: 100%;
     padding: 2px;
   }
 
@@ -200,7 +204,7 @@ but not for an assignment.
     background-color: var(--sk-beige);
   }
   *:required {
-    border: 2px dashed var(--sk-orange);
+    border: 2px solid var(--sk-orange);
   }
   label.required:after {
     content:" *";
@@ -213,7 +217,7 @@ but not for an assignment.
     border:2px solid green;
   }
   input::placeholder{
-    color:var(--sk-black-op);
+    color:var(--sk-shadow-gray);
   }
   input[type=checkbox]:checked + label {
     color: green;
@@ -327,16 +331,11 @@ nav a:target {
 
 /* TABLE */
 table {width: 98%}
-caption {}
 tr td, td th {border-bottom:1px dotted whitesmoke;}
-tr:nth-child(even){}
 th {width:auto}
 
 
 /* FORM */
-fieldset {}
-legend {}
+
 label {display:block;margin-top:3%;}
-input {}
-button {}
-button:hover {}
+

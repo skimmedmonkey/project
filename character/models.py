@@ -20,7 +20,7 @@ class DnDCharacter(models.Model):
     charisma = models.IntegerField(validators=[MaxValueValidator(20)])
     armor = models.IntegerField(validators=[MaxValueValidator(20)])
     initiative = models.IntegerField(validators=[MaxValueValidator(20)])
-    speed = models.IntegerField(validators=[MaxValueValidator(20)])
+    speed = models.IntegerField(validators=[MaxValueValidator(30)])
     equipment = models.CharField(max_length=50)
     attacks = models.CharField(max_length=50)
     spells = models.CharField(max_length=300, blank=True, null=True)

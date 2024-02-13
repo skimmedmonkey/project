@@ -13,12 +13,17 @@
     <p>Enter a monster's name into this simple form to get all of the information about that particular monster.</p>
     <form action="{% url 'monster_search' %}" method="get">
         <label for="search_term">Search for a monster:</label>
-        <input type="text" id="search_term" name="search_term">
+        <input type="text" id="search_term" name="search_term" placeholder="Example: Aboleth">
         <button type="submit">Search</button>
     </form>
 
     {% if monster_data %}
-        <h3>{{ monster_data.name }}</h3>
+        <h2>{{ monster_data.name }}</h2>
+        <div class="section">
+            {% if monster_data.image %}
+            <img class="image" src="https://www.dnd5eapi.co{{ monster_data.image }}" alt="{{ monster_data.name }}">
+            {% endif %}
+        </div>
         <div class="section">
             <h2>Basic Information</h2>
             <div class="property"><strong>Size:</strong> {{ monster_data.size }}</div>
@@ -67,10 +72,7 @@
     
         <!-- Add more sections for proficiencies, special abilities, actions, legendary actions, etc. -->
 
-        <div class="section">
-            <h2>Image</h2>
-            <img class="image" src="https://www.dnd5eapi.co{{ monster_data.image }}" alt="{{ monster_data.name }}">
-        </div>
+
 
         <div></div>
     {% elif error_message %}
