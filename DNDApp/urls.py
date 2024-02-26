@@ -27,7 +27,8 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('Monsters/', include('Monsters.urls')),
     path('character/', include('character.urls')),
-    path('items/', include('items.urls'))
+    path('items/', include('items.urls')),
+    path('compare/', include('compare_api.urls')),
 ]
 
 # Use static() to add URL mapping to serve static files during development (only)
