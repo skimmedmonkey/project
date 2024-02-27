@@ -48,3 +48,6 @@ The expected JSON format for input data is shown below:
         {"name": "assignment3", "date": "2024-01-16"}
     ]
 }
+
+### UML sequence diagram
+![DNDAppAPI](https://github.com/skimmedmonkey/project/assets/129809154/ce89fe74-cb6a-40fd-b3ca-107a96a559a4)
