@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import CompareDates
+from .views import CompareNamesDatesView
 
 urlpatterns = [
-    path('compare/', CompareDates.as_view()),
+    path('compare/', CompareNamesDatesView.as_view(), name='compare'),
 ]

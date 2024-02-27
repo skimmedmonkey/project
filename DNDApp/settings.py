@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'Monsters',
     'character',
     'items',
-    'home'
+    'home',
+    'compare_api'
 ]
 
 MIDDLEWARE = [

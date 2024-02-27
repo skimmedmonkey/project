@@ -1,5 +1,7 @@
 from rest_framework import serializers
+from .models import NameDate
 
-class DateData(serializers.Serializer):
-    name = serializers.CharField(max_length=255)
-    date = serializers.DateField()
+class NameDateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NameDate
+        fields = ['name', 'date']

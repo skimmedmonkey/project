@@ -1,34 +1,49 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import DateData
+from rest_framework.parsers import JSONParser
+from .models import NameDate
+from .serializers import NameDateSerializer
 
-# Create your views here.
-class CompareDates(APIView):
+class CompareNamesDatesView(APIView):
+    parser_classes = [JSONParser]
+
     def post(self, request):
-        """Reads JSON data from request"""
-        try:
-            data  = request.data
-        except Exception as e:
-            return Response({'error': 'Failed to read JSON data'}, status=400)
-        
-        serializer = DateData(data, many=True)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=400)
-        
-        data1 = [item.dict() for item in serializer.validated_data if item['source'] == 'array1']
-        data2 = [item.dict() for item in serializer.validated_data if item['source'] == 'array2']
+        # Deserialize the JSON data
+        data = request.data
 
-        if not data1 or not data2:
-            return Response({'error': 'Both arrays cannot be empty'}, status=400)
+        # Validate and save the data for array1
+        serializer_array1 = NameDateSerializer(data=data.get('array1', []), many=True)
+        if serializer_array1.is_valid():
+            serializer_array1.save()
 
-        # Compare data and find discrepancies
-        discrepancies = []
-        for row1 in data1:
-            for row2 in data2:
-                if row1['name'] == row2['name'] and row1['date'] != row2['date']:
-                    discrepancies.append({'name': row1['name'], 'date': row1['date']})
-                    break  # Stop comparing if a match is found for the name
+        # Validate and save the data for array2
+        serializer_array2 = NameDateSerializer(data=data.get('array2', []), many=True)
+        if serializer_array2.is_valid():
+            serializer_array2.save()
 
-        # Return JSON with discrepancies
-        return Response(discrepancies)
+        # Compare names and dates
+        result = []
+
+        # Iterate over array2
+        for name_date_array2 in serializer_array2.validated_data:
+            name_array2 = name_date_array2['name']
+            date_array2 = name_date_array2['date']
+
+            # Check if the name exists in array1 and the dates are different
+            matching_dates_array1 = NameDate.objects.filter(name=name_array2)
+            found_difference = False
+
+            for matching_date_array1 in matching_dates_array1:
+                if matching_date_array1.date != date_array2:
+                    found_difference = True
+                    break  # Break the loop as soon as a difference is found
+
+            # Include the name and date from array2 only if a difference is found
+            if found_difference:
+                result.append({
+                    'name': name_array2,
+                    'date_array2': date_array2
+                })
+
+        # Return the result
+        return Response(result)

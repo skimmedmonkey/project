@@ -1,0 +1,12 @@
+{
+    "array1": [
+        {"name": "assignment1", "date": "2023-12-31"},
+        {"name": "assignment2", "date": "2024-01-15"},
+        {"name": "assignment3", "date": "2024-02-01"}
+    ],
+    "array2": [
+        {"name": "assignment1", "date": "2023-12-31"},
+        {"name": "assignment2", "date": "2024-01-16"},
+        {"name": "assignment3", "date": "2024-02-05"}
+    ]
+}
